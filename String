@@ -1,0 +1,83 @@
+1) adding stringliteral as s:&str
+
+// Fix error without adding new line
+fn main() {
+    let s: &str = "hello, world";
+
+    println!("Success!");
+}
+
+2)Using & to convert Box<str> to &str
+
+// Fix the error with at least two solutions
+fn main() {
+    let s: Box<str> =  "hello, world".into();
+    greetings(&s)
+}
+
+fn greetings(s: &str) {
+    println!("{}",s)
+}
+ 
+3)Initializing a string by String::new()
+
+// Fill the blank
+fn main() {
+    let mut s = String::new();
+    s.push_str("hello, world");
+    s.push('!');
+
+    assert_eq!(s, "hello, world!");
+
+    println!("Success!");
+}
+4)
+
+// Fix all errors without adding newline
+fn main() {
+    let  mut s =  String::from("hello");
+    s.push(',');
+    s.push_str(" world");
+    s += "!";
+
+    println!("{}", s);
+}
+5)Using replace keyword
+
+
+// Fill the blank
+fn main() {
+    let s = String::from("I like dogs");
+    // Allocate new memory and store the modified string there
+    let s1 = s.replace("dogs", "cats");
+
+    assert_eq!(s1, "I like cats");
+
+    println!("Success!");
+}
+
+6)using clone of s1 and referencing s2 into s3
+
+// Fix errors without removing any line
+fn main() {
+    let s1 = String::from("hello,");
+    let s2 = String::from("world!");
+    let s3 = s1.clone() + &s2; 
+    assert_eq!(s3,"hello,world!");
+    println!("{}",s1);
+}
+
+7)Using .to_string 
+
+
+// Fix error with at least two solutions
+fn main() {
+    let s =  "hello, world".to_string();
+    greetings(s)
+}
+
+fn greetings(s: String) {
+    println!("{}",s)
+}
+
+

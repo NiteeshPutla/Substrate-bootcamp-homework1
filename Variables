@@ -1,0 +1,103 @@
+1) Initialized x=5 and printed the result
+
+// Fix the error below with least amount of modification to the code
+fn main() {
+    let x: i32 = 5; // Uninitialized but used, ERROR !
+    let y: i32; // Uninitialized but also unused, only a Warning !
+
+    assert_eq!(x, 5);
+    println!("Success!");
+}
+
+
+2)Used mut keyword on x and incremented it twice
+
+
+// Fill the blanks in the code to make it compile
+fn main() {
+    let mut x =  1;
+    x += 2; 
+    
+    assert_eq!(x, 3);
+    println!("Success!");
+}
+
+3)Since y is in blockscope we cannot access it outside the scope so we can print only x in the outer scope
+
+fn main() {
+    let x: i32 = 10;
+    {
+        let y: i32 = 5;
+        println!("The value of x is {} and value of y is {}", x, y);
+    }
+    println!("The value of x is {}", x);
+}
+
+
+4)-
+
+5)swapped 5 and 12 in assert_eq! to print 42 in the terminal
+
+// Only modify `assert_eq!` to make the `println!` work(print `42` in terminal)
+fn main() {
+    let x: i32 = 5;
+    {
+        let x = 12;
+        assert_eq!(x, 12);
+    }
+
+    assert_eq!(x, 5);
+
+    let x =  42;
+    println!("{}", x); // Prints "42".
+}
+
+6)Removed the line  x +=3
+
+// Remove a line in the code to make it compile
+fn main() {
+    let mut x: i32 = 1;
+    x = 7;
+    // Shadowing and re-binding
+    let x = x; 
+    
+
+
+    let y = 4;
+    // Shadowing
+    let y = "I can also be bound to text!"; 
+
+    println!("Success!");
+}
+
+7)placed underscore before variablename suggesting compiler to say its ok to be unsused ,dont throw warning
+fn main() {
+    let _x = 1;
+}
+
+8)Written mut keyword before x to make it mutable
+
+// Fix the error below with least amount of modification
+fn main() {
+    let (mut x, y) = (1, 2);
+    x += 2;
+
+    assert_eq!(x, 3);
+    assert_eq!(y, 2);
+
+    println!("Success!");
+}
+9)Given second argument as [3,2] in assert eq as second parameter where 3 is the initial entry of x and 2 final entry of y
+
+
+fn main() {
+    let (x, y);
+    (x,..) = (3, 4);
+    [.., y] = [1, 2];
+    // Fill the blank to make the code work
+    assert_eq!([x,y], [3,2]);
+
+    println!("Success!");
+} 
+
+

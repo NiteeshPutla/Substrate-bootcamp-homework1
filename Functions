@@ -1,0 +1,78 @@
+1)modified types of x and y as i32 and its result x+y type as i32
+fn main() {
+    // don't modify the following two lines!
+    let (x, y) = (1, 2);
+    let s = sum(x, y);
+
+    assert_eq!(s, 3);
+    println!("Success!")
+}
+
+fn sum(x: i32, y: i32) -> i32 {
+    x + y
+}
+
+2)Replaced i32 with ()
+fn main() {
+   print();
+}
+
+// Replace i32 with another type
+fn print() -> (){
+   println!("Success!");
+}
+
+3)
+fn main() {
+    never_return();
+    println!("Failed!");
+
+}
+
+fn never_return() -> ! {
+    // implement this function, don't modify fn signatures
+    panic!("I return nothing!")
+}
+
+4)Used unimplemented in never return.
+fn main() {
+    println!("Success!");
+}
+
+fn get_option(tp: u8) -> Option<i32> {
+    match tp {
+        1 => {
+            // TODO
+        }
+        _ => {
+            // TODO
+        }
+    };
+
+    never_return_fn()
+}
+
+// IMPLEMENT this function
+fn never_return_fn() -> ! {
+    unimplemented!()
+}
+
+5)set the value of b as false and v as _v 
+fn main() {
+    // FILL in the blank
+    let b = false;
+
+    let _v = match b {
+        true => 1,
+        // Diverging functions can also be used in match expression
+        false => {
+            println!("Success!");
+            panic!("we have no value for `false`, but we can panic")
+        }
+    };
+
+    println!("Exercise Failed if printing out this line!");
+}
+
+
+
